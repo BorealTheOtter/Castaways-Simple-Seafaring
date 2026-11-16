@@ -22,6 +22,8 @@ public class SimpleSeafaring implements ModInitializer {
 		// Proceed with mild caution.
 
 		LOGGER.info("Hello Fabric world!");
+
+		
 	}
 
 	public static Identifier id(String path) {
