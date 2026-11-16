@@ -1,5 +1,6 @@
 package com.castaways;
 
+import com.castaways.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
 import net.minecraft.util.Identifier;
@@ -24,6 +25,8 @@ public class SimpleSeafaring implements ModInitializer {
 
 		LOGGER.info("Hello Fabric world!");
         ModBlocks.initialize();
+
+		ModItems.registerItemGroups();
 	}
 
 	public static Identifier id(String path) {
