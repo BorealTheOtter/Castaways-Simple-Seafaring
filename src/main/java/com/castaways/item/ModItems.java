@@ -3,6 +3,7 @@ package com.castaways.item;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.networking.v1.S2CPlayChannelEvents;
+import net.minecraft.component.type.FoodComponent;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemGroups;
@@ -42,7 +43,12 @@ public class ModItems {
         return Registry.register(Registries.ITEM, itemKey, item);
     }
 
+
     //ITEMS
 
-    public static final Item COCONUT = register("coconut", Item::new, new Item.Settings());
+    public static final Item COCONUT = register("coconut", Item::new, new Item.Settings().food(new FoodComponent.Builder()
+            .nutrition(4)
+            .saturationModifier(2.5f)
+            .alwaysEdible()
+            .build()));
 }
