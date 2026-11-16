@@ -1,3 +1,5 @@
 {
-  "item.simple_seafaring.coconut_item": "Coconut"
+  "item.simple-seafaring.coconut": "Coconut",
+
+  "itemgroup.simple-seafaring": "Simple Seafaring"
 }
