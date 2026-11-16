@@ -6,6 +6,7 @@ import net.minecraft.util.Identifier;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import com.castaways.blocks.ModBlocks;
 
 public class SimpleSeafaring implements ModInitializer {
 	public static final String MOD_ID = "simple-seafaring";
@@ -22,6 +23,7 @@ public class SimpleSeafaring implements ModInitializer {
 		// Proceed with mild caution.
 
 		LOGGER.info("Hello Fabric world!");
+        ModBlocks.initialize();
 	}
 
 	public static Identifier id(String path) {
