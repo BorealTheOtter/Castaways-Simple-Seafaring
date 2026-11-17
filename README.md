@@ -7,3 +7,9 @@ For setup instructions, please see the [Fabric Documentation page](https://docs.
 ## License
 
 This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+
+## Dependencies
+- Lithostitched (Version 1.6.0 or greater)
+    - Used for generating archipelago biome into the overworld.
+
+
