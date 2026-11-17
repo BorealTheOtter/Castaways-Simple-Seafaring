@@ -1,13 +1,12 @@
 package com.castaways.item;
 
+import com.castaways.entity.ModEntityType;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.networking.v1.S2CPlayChannelEvents;
 import net.minecraft.component.type.FoodComponent;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemGroups;
-import net.minecraft.item.ItemStack;
+import net.minecraft.entity.EntityType;
+import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -15,7 +14,7 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import com.castaways.SimpleSeafaring;
-
+import com.castaways.blocks.ModBlocks;
 import java.util.function.Function;
 
 public class ModItems {
@@ -28,8 +27,13 @@ public class ModItems {
             .icon(() -> new ItemStack(ModItems.COCONUT))
             .displayName(Text.translatable("itemgroup." + SimpleSeafaring.MOD_ID))
             .entries((displayContext, entries) -> {
+                //BLOCKS
+                entries.add(ModBlocks.PALM_LOG);
+                entries.add(ModBlocks.STRIPPED_PALM_LOG);
+                //ITEMS
                 entries.add(ModItems.COCONUT);
-                //add more items here
+                //ENTITY
+                entries.add(ModItems.PALM_BOAT);
             }).build();
 
 
@@ -50,5 +54,9 @@ public class ModItems {
             .nutrition(4)
             .saturationModifier(2.5f)
             .alwaysEdible()
-            .build()));
+            .build()
+            )
+    );
+
+    public static final Item PALM_BOAT = register("palm_boat", settings -> new BoatItem(ModEntityType.PALM_BOAT, settings), new Item.Settings().maxCount(1));
 }

@@ -14,8 +14,8 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
-
 import java.util.function.Function;
+import com.castaways.SimpleSeafaring;
 
 public class ModBlocks {
 
@@ -31,7 +31,7 @@ public class ModBlocks {
 
     private static Block register(String name, Function<AbstractBlock.Settings, Block> factory,
                                   AbstractBlock.Settings settings) {
-        Identifier id = Identifier.of("simple-seafaring", name);
+        Identifier id = Identifier.of(SimpleSeafaring.MOD_ID, name);
 
         RegistryKey<Block> blockKey = RegistryKey.of(RegistryKeys.BLOCK, id);
         Block block = factory.apply(settings.registryKey(blockKey));
