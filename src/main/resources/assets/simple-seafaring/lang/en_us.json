@@ -1,7 +1,8 @@
 {
   "item.simple-seafaring.coconut": "Coconut",
   "item.simple-seafaring.palm_boat": "Palm Boat",
-  "item.simple-seafaring.palm_boat_chest": "Palm Boat with Chest",
+  "item.simple-seafaring.palm_chest_boat": "Palm Boat with Chest",
+  "block.simple-seafaring.palm_sapling": "Palm Sapling",
   "block.simple-seafaring.palm_log": "Palm Log",
   "block.simple-seafaring.palm_leaves": "Palm Leaves",
   "block.simple-seafaring.palm_planks": "Palm Planks",
