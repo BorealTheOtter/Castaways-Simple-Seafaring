@@ -1,5 +1,8 @@
 {
   "item.simple-seafaring.coconut": "Coconut",
+  "item.simple-seafaring.palm_boat": "Palm Boat",
+  "block.simple-seafaring.palm_log": "Palm Log",
+  "block.simple-seafaring.stripped_palm_log": "Stripped Palm Log",
 
   "itemgroup.simple-seafaring": "Simple Seafaring"
 }
