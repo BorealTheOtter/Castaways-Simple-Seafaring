@@ -30,6 +30,7 @@ public class ModItems {
                 //BLOCKS
                 entries.add(ModBlocks.PALM_LOG);
                 entries.add(ModBlocks.STRIPPED_PALM_LOG);
+                entries.add(ModBlocks.PALM_LEAVES);
                 //ITEMS
                 entries.add(ModItems.COCONUT);
                 //ENTITY
