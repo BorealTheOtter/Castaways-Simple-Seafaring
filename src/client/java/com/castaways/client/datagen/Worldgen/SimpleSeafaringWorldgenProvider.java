@@ -1,4 +1,4 @@
-package com.castaways.Worldgen;
+package com.castaways.client.datagen.Worldgen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricDynamicRegistryProvider;
