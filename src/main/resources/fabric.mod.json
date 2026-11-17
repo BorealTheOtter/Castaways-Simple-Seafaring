@@ -20,8 +20,11 @@
 		],
 		"client": [
 			"com.castaways.client.SimpleSeafaringClient"
-		]
-	},
+		],
+        "fabric-datagen": [
+         "com.castaways.client.datagen.SimpleSeafaringDataGenerator"
+        ]
+    },
 	"mixins": [
 		"simple-seafaring.mixins.json",
 		{

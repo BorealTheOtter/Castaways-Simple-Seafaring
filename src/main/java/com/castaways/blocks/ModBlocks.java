@@ -1,11 +1,9 @@
 package com.castaways.blocks;
 
 
+import com.castaways.item.PalmLeavesBlock;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.PillarBlock;
+import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -16,6 +14,8 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import java.util.function.Function;
 import com.castaways.SimpleSeafaring;
+
+import static net.minecraft.block.Blocks.createLeavesSettings;
 
 public class ModBlocks {
 
@@ -28,6 +28,11 @@ public class ModBlocks {
             AbstractBlock.Settings.copy(Blocks.OAK_LOG)
                     .strength(2.0f)
                     .sounds(BlockSoundGroup.WOOD));
+
+    public static final Block PALM_LEAVES = register("palm_leaves", PalmLeavesBlock::new,
+            AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)
+                    .strength(0.2f)
+                    .sounds(BlockSoundGroup.GRASS));
 
     private static Block register(String name, Function<AbstractBlock.Settings, Block> factory,
                                   AbstractBlock.Settings settings) {
