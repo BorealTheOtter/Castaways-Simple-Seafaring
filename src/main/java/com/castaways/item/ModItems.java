@@ -30,6 +30,7 @@ public class ModItems {
                 entries.add(ModItems.COCONUT);
                 entries.add(ModBlocks.PALM_LOG);
                 entries.add(ModBlocks.STRIPPED_PALM_LOG);
+                entries.add(ModItems.PALM_BOAT);
             }).build();
 
 
