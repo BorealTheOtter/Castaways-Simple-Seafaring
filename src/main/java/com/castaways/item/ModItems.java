@@ -27,9 +27,12 @@ public class ModItems {
             .icon(() -> new ItemStack(ModItems.COCONUT))
             .displayName(Text.translatable("itemgroup." + SimpleSeafaring.MOD_ID))
             .entries((displayContext, entries) -> {
-                entries.add(ModItems.COCONUT);
+                //BLOCKS
                 entries.add(ModBlocks.PALM_LOG);
                 entries.add(ModBlocks.STRIPPED_PALM_LOG);
+                //ITEMS
+                entries.add(ModItems.COCONUT);
+                //ENTITY
                 entries.add(ModItems.PALM_BOAT);
             }).build();
 
