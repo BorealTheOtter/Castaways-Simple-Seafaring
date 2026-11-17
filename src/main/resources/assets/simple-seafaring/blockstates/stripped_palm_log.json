@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=y": {
+      "model": "simple-seafaring:block/stripped_palm_log"
+    },
+    "axis=z": {
+      "model": "simple-seafaring:block/stripped_palm_log",
+      "x": 90
+    },
+    "axis=x": {
+      "model": "simple-seafaring:block/stripped_palm_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}
