@@ -1,6 +1,8 @@
 package com.castaways.entity;
 
+import com.castaways.SimpleSeafaring;
 import com.castaways.entity.vehicle.ModBoatEntity;
+import com.castaways.item.ModItems;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
@@ -12,12 +14,14 @@ import net.minecraft.util.Identifier;
 
 public class ModEntityType{
 
+    public static void initialize(){}
+
     public static final EntityType<ModBoatEntity> PALM_BOAT;
 
     private static <T extends Entity> EntityType<T> register(String id, EntityType.Builder<T> builder) {
         RegistryKey<EntityType<?>> key = RegistryKey.of(
           RegistryKeys.ENTITY_TYPE,
-          Identifier.of("", id)
+          Identifier.of(SimpleSeafaring.MOD_ID, id)
         );
         return Registry.register(Registries.ENTITY_TYPE, key, builder.build(key));
     }
