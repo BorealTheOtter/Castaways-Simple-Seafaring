@@ -1,12 +1,9 @@
 package com.castaways.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.fabricmc.fabric.api.networking.v1.S2CPlayChannelEvents;
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemGroups;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -14,7 +11,9 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+
 import com.castaways.SimpleSeafaring;
+import com.castaways.blocks.ModBlocks;
 
 import java.util.function.Function;
 
@@ -29,7 +28,9 @@ public class ModItems {
             .displayName(Text.translatable("itemgroup." + SimpleSeafaring.MOD_ID))
             .entries((displayContext, entries) -> {
                 entries.add(ModItems.COCONUT);
-                //add more items here
+
+                entries.add(ModBlocks.PALM_LOG);
+                entries.add(ModBlocks.STRIPPED_PALM_LOG);
             }).build();
 
 
