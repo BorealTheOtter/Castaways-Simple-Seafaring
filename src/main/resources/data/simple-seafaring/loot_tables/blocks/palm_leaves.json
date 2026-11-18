@@ -189,5 +189,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "block.simple-seafaring:palm_leaves"
+  "random_sequence": "simple-seafaring:blocks/palm_leaves"
 }
