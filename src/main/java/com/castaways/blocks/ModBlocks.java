@@ -1,11 +1,9 @@
 package com.castaways.blocks;
 
 
+import com.castaways.item.PalmLeavesBlock;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.PillarBlock;
+import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -14,8 +12,10 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
-
 import java.util.function.Function;
+import com.castaways.SimpleSeafaring;
+
+import static net.minecraft.block.Blocks.createLeavesSettings;
 
 public class ModBlocks {
 
@@ -29,9 +29,27 @@ public class ModBlocks {
                     .strength(2.0f)
                     .sounds(BlockSoundGroup.WOOD));
 
+    public static final Block PALM_WOOD = register("palm_wood", PillarBlock::new,
+            AbstractBlock.Settings.copy(Blocks.OAK_WOOD)
+                    .strength(2.0f)
+                    .sounds(BlockSoundGroup.WOOD));
+
+    public static final Block STRIPPED_PALM_WOOD = register("stripped_palm_wood", PillarBlock::new,
+            AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_WOOD)
+                    .strength(2.0f)
+                    .sounds(BlockSoundGroup.WOOD));
+
+    public static final Block PALM_LEAVES = register("palm_leaves", PalmLeavesBlock::new,
+            AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)
+                    .strength(0.2f)
+                    .sounds(BlockSoundGroup.GRASS));
+
+    //TEMP BLOCK TO SATISFY DROP TABLE
+    public static final Block PALM_SAPLING = register("palm_sapling", Block::new, AbstractBlock.Settings.copy(Blocks.COBBLESTONE).strength(2f));
+
     private static Block register(String name, Function<AbstractBlock.Settings, Block> factory,
                                   AbstractBlock.Settings settings) {
-        Identifier id = Identifier.of("simple-seafaring", name);
+        Identifier id = Identifier.of(SimpleSeafaring.MOD_ID, name);
 
         RegistryKey<Block> blockKey = RegistryKey.of(RegistryKeys.BLOCK, id);
         Block block = factory.apply(settings.registryKey(blockKey));
