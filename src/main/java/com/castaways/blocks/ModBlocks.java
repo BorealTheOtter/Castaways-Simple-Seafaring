@@ -29,6 +29,16 @@ public class ModBlocks {
                     .strength(2.0f)
                     .sounds(BlockSoundGroup.WOOD));
 
+    public static final Block PALM_WOOD = register("palm_wood", PillarBlock::new,
+            AbstractBlock.Settings.copy(Blocks.OAK_WOOD)
+                    .strength(2.0f)
+                    .sounds(BlockSoundGroup.WOOD));
+
+    public static final Block STRIPPED_PALM_WOOD = register("stripped_palm_wood", PillarBlock::new,
+            AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_WOOD)
+                    .strength(2.0f)
+                    .sounds(BlockSoundGroup.WOOD));
+
     public static final Block PALM_LEAVES = register("palm_leaves", PalmLeavesBlock::new,
             AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)
                     .strength(0.2f)
