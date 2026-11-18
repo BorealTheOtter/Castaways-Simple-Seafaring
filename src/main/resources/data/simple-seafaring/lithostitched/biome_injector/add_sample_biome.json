@@ -1,18 +1,11 @@
 {
-  "type": "lithostitched:add_points",
+  "type": "lithostitched:force_placement",
   "dimension": "minecraft:overworld",
-  "points": [
-    {
-      "biome": "simple-seafaring:sample_biome",
-      "parameters": {
-        "continentalness": [0.3, 1.0],
-        "depth": 0.0,
-        "erosion": [-0.2, 0.2],
-        "humidity": [-0.2, 0.2],
-        "offset": 0.0,
-        "temperature": [0.2, 0.6],
-        "weirdness": [-0.2, 0.2]
-      }
-    }
-  ]
+  "biome": "simple-seafaring:sample_biome",
+  "parameters": {
+    "simple-seafaring:island_chain_mask": [0.02, 100.0]
+  }
 }
+
+
+

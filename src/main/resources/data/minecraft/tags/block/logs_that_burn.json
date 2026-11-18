@@ -2,6 +2,8 @@
   "replace": false,
   "values": [
     "simple-seafaring:palm_log",
-    "simple-seafaring:stripped_palm_log"
+    "simple-seafaring:palm_wood",
+    "simple-seafaring:stripped_palm_log",
+    "simple-seafaring:stripped_palm_wood"
   ]
 }
