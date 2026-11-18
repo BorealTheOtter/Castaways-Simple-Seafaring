@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "simple-seafaring:block/palm_sapling"
+  }
+}
