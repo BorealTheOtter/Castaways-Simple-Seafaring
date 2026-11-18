@@ -4,6 +4,7 @@ package com.castaways.blocks;
 import com.castaways.item.PalmLeavesBlock;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.block.*;
+import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -37,12 +38,16 @@ public class ModBlocks {
     public static final Block STRIPPED_PALM_WOOD = register("stripped_palm_wood", PillarBlock::new,
             AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_WOOD)
                     .strength(2.0f)
-                    .sounds(BlockSoundGroup.WOOD));
+                    .sounds(BlockSoundGroup.WOOD).burnable());
 
     public static final Block PALM_LEAVES = register("palm_leaves", PalmLeavesBlock::new,
             AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)
                     .strength(0.2f)
-                    .sounds(BlockSoundGroup.GRASS));
+                    .sounds(BlockSoundGroup.GRASS).burnable());
+
+    public static final Block PALM_PLANKS = register("palm_planks", Block::new, AbstractBlock.Settings.create()
+            .mapColor(MapColor.RAW_IRON_PINK).instrument(NoteBlockInstrument.BASS)
+            .strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD).burnable());
 
     //TEMP BLOCK TO SATISFY DROP TABLE
     public static final Block PALM_SAPLING = register("palm_sapling", Block::new, AbstractBlock.Settings.copy(Blocks.COBBLESTONE).strength(2f));
