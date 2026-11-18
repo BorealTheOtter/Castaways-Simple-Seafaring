@@ -8,13 +8,16 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 
 public class PalmLeavesBlock extends LeavesBlock {
+
+    public static final MapCodec<PalmLeavesBlock> CODEC = createCodec(PalmLeavesBlock::new);
+
     public PalmLeavesBlock(AbstractBlock.Settings settings) {
         super(0.025f, settings);
     }
 
     @Override
     public MapCodec<? extends LeavesBlock> getCodec() {
-        return null;
+        return CODEC;
     }
 
     @Override

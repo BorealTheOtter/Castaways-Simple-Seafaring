@@ -34,6 +34,9 @@ public class ModBlocks {
                     .strength(0.2f)
                     .sounds(BlockSoundGroup.GRASS));
 
+    //TEMP BLOCK TO SATISFY DROP TABLE
+    public static final Block PALM_SAPLING = register("palm_sapling", Block::new, AbstractBlock.Settings.copy(Blocks.COBBLESTONE).strength(2f));
+
     private static Block register(String name, Function<AbstractBlock.Settings, Block> factory,
                                   AbstractBlock.Settings settings) {
         Identifier id = Identifier.of(SimpleSeafaring.MOD_ID, name);
