@@ -33,6 +33,7 @@ public class ModItems {
                 entries.add(ModBlocks.STRIPPED_PALM_LOG);
                 entries.add(ModBlocks.STRIPPED_PALM_WOOD);
                 entries.add(ModBlocks.PALM_LEAVES);
+                entries.add(ModBlocks.PALM_SAPLING);
                 entries.add(ModBlocks.PALM_PLANKS);
                 //ITEMS
                 entries.add(ModItems.COCONUT);
