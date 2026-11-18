@@ -45,7 +45,7 @@ public class ModBlocks {
                     .sounds(BlockSoundGroup.GRASS));
 
     //TEMP BLOCK TO SATISFY DROP TABLE
-    public static final Block PALM_SAPLING = register("palm_sapling", Block::new, AbstractBlock.Settings.copy(Blocks.COBBLESTONE).strength(2f));
+    public static final Block PALM_SAPLING = register("palm_sapling", Block::new, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING).strength(2f));
 
     private static Block register(String name, Function<AbstractBlock.Settings, Block> factory,
                                   AbstractBlock.Settings settings) {
