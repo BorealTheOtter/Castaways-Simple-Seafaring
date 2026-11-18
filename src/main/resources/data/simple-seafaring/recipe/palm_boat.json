@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "# #",
+    "###"
+  ],
+  "key": {
+    "#": "simple-seafaring:palm_planks"
+  },
+  "result": {
+    "id": "simple-seafaring:palm_boat",
+    "count": 1
+  }
+}
