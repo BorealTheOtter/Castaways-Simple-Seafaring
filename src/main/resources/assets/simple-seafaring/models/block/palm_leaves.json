@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "simple-seafaring:block/palm_leaves"
+  }
+}
