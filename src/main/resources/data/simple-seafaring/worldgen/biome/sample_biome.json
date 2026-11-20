@@ -1,14 +1,14 @@
 {
-  "temperature": 0.5,
-  "downfall": 0.5,
+  "temperature": 0.8,
+  "downfall": 0.7,
   "has_precipitation": true,
   "effects": {
     "sky_color": 7907327,
     "fog_color": 12638463,
     "water_color": 4159204,
     "water_fog_color": 329011,
-    "grass_color": 6553380,
-    "foliage_color": 5897996
+    "grass_color": 7842607,
+    "foliage_color": 6469156
   },
   "spawners": {
     "ambient": [],
@@ -43,9 +43,7 @@
     [],
     [],
     [
-      "minecraft:trees_plains",
       "minecraft:patch_grass_plain"
-
     ]
   ]
 }
