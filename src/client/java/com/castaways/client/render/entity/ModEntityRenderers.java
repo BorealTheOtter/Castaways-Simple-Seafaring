@@ -16,7 +16,7 @@ public class ModEntityRenderers {
 
 
     private static EntityModelLayer registerVanillaBoat(String woodName, EntityType<? extends ModBoatEntity> type, boolean isChestBoat){
-        EntityModelLayer layer = new EntityModelLayer(Identifier.of(SimpleSeafaring.MOD_ID), (isChestBoat ? "chest_boat/" : "boat/") + woodName);
+        EntityModelLayer layer = new EntityModelLayer(Identifier.of(SimpleSeafaring.MOD_ID, (isChestBoat ? "chest_boat/" : "boat/") + woodName), "main");
 
         EntityModelLayerRegistry.registerModelLayer(layer, isChestBoat ? BoatEntityModel::getChestTexturedModelData : BoatEntityModel::getTexturedModelData);
 
