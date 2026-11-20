@@ -2,11 +2,7 @@ package com.castaways.item;
 
 import com.castaways.entity.ModEntityType;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.fabricmc.fabric.api.networking.v1.S2CPlayChannelEvents;
-import net.fabricmc.fabric.api.registry.FuelRegistryEvents;
 import net.minecraft.component.type.FoodComponent;
-import net.minecraft.entity.EntityType;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -43,17 +39,6 @@ public class ModItems {
             }).build();
 
 
-    public static void registerFuel(){
-        FuelRegistryEvents.BUILD.register((builder, context) -> {
-            builder.add(ModBlocks.STRIPPED_PALM_LOG, 300);
-            builder.add(ModBlocks.STRIPPED_PALM_WOOD, 300);
-            builder.add(ModBlocks.PALM_LOG, 300);
-            builder.add(ModBlocks.PALM_WOOD, 300);
-            builder.add(ModBlocks.PALM_PLANKS, 300);
-            builder.add(PALM_BOAT, 1200);
-            builder.add(ModBlocks.PALM_SAPLING, 100);
-        });
-    }
     public static void registerItemGroups() {
         Registry.register(Registries.ITEM_GROUP, GROUP_KEY, CUSTOM_GROUP);
     }

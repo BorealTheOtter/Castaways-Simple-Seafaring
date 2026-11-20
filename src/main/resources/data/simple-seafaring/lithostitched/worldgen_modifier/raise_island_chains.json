@@ -1,7 +1,7 @@
 {
-  "type": "lithostitched:wrap_noise_router",
-  "dimension": "minecraft:overworld",
-  "target": "final_density",
+  "type": "lithostitched:wrap_density_function",
+  "priority": 1000,
+  "target_function": "minecraft:overworld/depth",
   "wrapper_function": {
     "type": "minecraft:add",
     "argument1": {
@@ -9,16 +9,8 @@
     },
     "argument2": {
       "type": "minecraft:mul",
-      "argument1": "simple-seafaring:island_chain_mask",
-      "argument2": {
-        "type": "minecraft:y_clamped_gradient",
-        "from_y": 58,
-        "to_y": 78,
-        "from_value": 1.0,
-        "to_value": 0.0
-      }
+      "argument1": 0.45,
+      "argument2": "simple-seafaring:island_chain_mask"
     }
   }
 }
-
-
