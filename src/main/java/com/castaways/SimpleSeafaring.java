@@ -30,7 +30,7 @@ public class SimpleSeafaring implements ModInitializer {
 		ModEntityType.initialize();
 
 		ModItems.registerItemGroups();
-        ModItems.registerFuel();
+        ModItems.registerFuels();
 	}
 
 	public static Identifier id(String path) {
