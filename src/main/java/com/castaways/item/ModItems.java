@@ -2,6 +2,7 @@ package com.castaways.item;
 
 import com.castaways.entity.ModEntityType;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.fabricmc.fabric.api.registry.FuelRegistryEvents;
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
@@ -41,6 +42,15 @@ public class ModItems {
 
     public static void registerItemGroups() {
         Registry.register(Registries.ITEM_GROUP, GROUP_KEY, CUSTOM_GROUP);
+    }
+
+    public static void registerFuels() {
+        FuelRegistryEvents.BUILD.register((builder, context) -> {
+            builder.add(PALM_BOAT, 1200);
+            builder.add(ModBlocks.PALM_SAPLING, 100);
+            builder.add(ModBlocks.PALM_PLANKS, 300);
+            builder.add(ModBlocks.PALM_LEAVES, 1);
+        });
     }
 
     public static Item register(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
