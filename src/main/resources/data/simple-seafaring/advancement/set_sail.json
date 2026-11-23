@@ -26,5 +26,5 @@
       }
     }
   },
-  "requirements": [["crafted_boat"], ["rode_boat", "rode_chest_boat"] ]
+  "requirements": [["crafted_boat"], ["rode_boat"] ]
 }
