@@ -10,5 +10,10 @@
   "block.simple-seafaring.stripped_palm_log": "Stripped Palm Log",
   "block.simple-seafaring.stripped_palm_wood": "Stripped Palm Wood",
 
-  "itemgroup.simple-seafaring": "Simple Seafaring"
+  "itemgroup.simple-seafaring": "Simple Seafaring",
+
+  "advancements.simple-seafaring.castaway.title": "Castaway",
+  "advancements.simple-seafaring.castaway.description": "Set foot in an Archipelago",
+  "advancements.simple-seafaring.set_sail.title": "Set Sail",
+  "advancements.simple-seafaring.set_sail.description": "Craft a Palm boat and climb aboard"
 }
