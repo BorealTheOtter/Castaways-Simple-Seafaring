@@ -3,6 +3,7 @@ package com.castaways;
 import com.castaways.blocks.ModBlocks;
 import com.castaways.entity.ModEntityType;
 import com.castaways.item.ModItems;
+import com.castaways.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.util.Identifier;
 
@@ -31,6 +32,8 @@ public class SimpleSeafaring implements ModInitializer {
 
 		ModItems.registerItemGroups();
         ModItems.registerFuels();
+
+        ModWorldGeneration.generateModWorldGen();
 	}
 
 	public static Identifier id(String path) {
