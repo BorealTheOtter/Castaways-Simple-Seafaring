@@ -1,0 +1,30 @@
+{
+  "parent": "simple-seafaring:castaways",
+  "display": {
+    "icon": { "id": "simple-seafaring:palm_boat" },
+    "title": { "translate": "advancements.simple-seafaring.set_sail.title" },
+    "description": { "translate": "advancements.simple-seafaring.set_sail.description" },
+    "frame": "task"
+  },
+  "criteria": {
+    "crafted_boat": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": { "recipe_id": "simple-seafaring:palm_boat" }
+    },
+    "rode_boat": {
+      "trigger": "minecraft:started_riding",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "vehicle": { "type": "simple-seafaring:palm_boat" }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [["crafted_boat"], ["rode_boat", "rode_chest_boat"] ]
+}
