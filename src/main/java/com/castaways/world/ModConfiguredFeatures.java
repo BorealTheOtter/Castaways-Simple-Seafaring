@@ -2,6 +2,7 @@ package com.castaways.world;
 
 import com.castaways.SimpleSeafaring;
 import com.castaways.blocks.ModBlocks;
+import net.minecraft.block.Blocks;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.Registerable;
@@ -29,7 +30,7 @@ public class ModConfiguredFeatures {
                 BlockStateProvider.of(ModBlocks.PALM_LEAVES),
                 new BlobFoliagePlacer(ConstantIntProvider.create(4), ConstantIntProvider.create(1), 3), //TODO: Replace with PalmFoliagePlacer
 
-                new TwoLayersFeatureSize(4,1,2)).build());
+                new TwoLayersFeatureSize(4,1,2)).dirtProvider(BlockStateProvider.of(Blocks.SAND)).build());
     }
 
     public static RegistryKey<ConfiguredFeature<?, ?>> registerKey(String name){

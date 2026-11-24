@@ -1,6 +1,7 @@
 package com.castaways.world.gen.trunk;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.TestableWorld;
@@ -30,6 +31,11 @@ public class PalmTrunkPlacer extends TrunkPlacer {
 
     @Override
     public List<FoliagePlacer.TreeNode> generate(TestableWorld world, BiConsumer<BlockPos, BlockState> replacer, Random random, int height, BlockPos startPos, TreeFeatureConfig config) {
+        if(world.testBlockState(startPos.down(), state -> state.isOf(Blocks.GRASS_BLOCK))) {
+            setToDirt(world, replacer, random, startPos.down(), config);
+        }
+
+
         return List.of();
     }
 }
