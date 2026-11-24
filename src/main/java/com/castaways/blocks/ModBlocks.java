@@ -11,6 +11,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import java.util.function.Function;
@@ -54,6 +55,9 @@ public class ModBlocks {
             .strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD)
             .burnable());
 
+    public static final Block COCONUT = registerBlockOnly("coconut", CoconutBlock::new,
+            AbstractBlock.Settings.copy(Blocks.COCOA));
+
     //TEMP BLOCK TO SATISFY DROP TABLE
     public static final Block PALM_SAPLING = register("palm_sapling",
             settings -> new PalmSaplingBlock(ModSaplingGenerators.PALM, settings),
@@ -72,6 +76,14 @@ public class ModBlocks {
                 new Item.Settings().registryKey(itemKey).useBlockPrefixedTranslationKey());
 
         Registry.register(Registries.ITEM, itemKey, item);
+        return Registry.register(Registries.BLOCK, blockKey, block);
+    }
+
+    private static Block registerBlockOnly(String name, Function<AbstractBlock.Settings, Block> factory,
+                                           AbstractBlock.Settings settings) {
+        Identifier id = Identifier.of(SimpleSeafaring.MOD_ID, name);
+        RegistryKey<Block> blockKey = RegistryKey.of(RegistryKeys.BLOCK, id);
+        Block block = factory.apply(settings.registryKey(blockKey));
         return Registry.register(Registries.BLOCK, blockKey, block);
     }
 
