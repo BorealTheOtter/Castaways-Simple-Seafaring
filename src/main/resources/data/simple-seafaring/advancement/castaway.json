@@ -2,8 +2,8 @@
   "parent": "minecraft:adventure/root",
   "display": {
     "icon": { "id": "minecraft:jungle_sapling" },
-    "title": { "translate": "advancements.simple-seafaring.castaways.title" },
-    "description": { "translate": "advancements.simple-seafaring.castaways.description" },
+    "title": { "translate": "advancements.simple-seafaring.castaway.title" },
+    "description": { "translate": "advancements.simple-seafaring.castaway.description" },
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true
@@ -17,7 +17,7 @@
             "condition": "minecraft:entity_properties",
             "entity": "this",
             "predicate": {
-              "location": { "biomes": "simple-seafaring:sample_biome" }
+              "location": { "biomes": "simple-seafaring:archipelago" }
             }
           }
         ]

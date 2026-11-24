@@ -4,7 +4,7 @@
   "priority": 1000,
   "points": [
     {
-      "biome": "simple-seafaring:sample_biome",
+      "biome": "simple-seafaring:archipelago",
       "parameters": {
         "temperature": [0.2, 1.0],
         "humidity": [-0.5, 0.8],
