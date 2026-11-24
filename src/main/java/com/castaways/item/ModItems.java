@@ -1,10 +1,12 @@
 package com.castaways.item;
 
+import com.castaways.armor.ModArmorMaterials;
 import com.castaways.entity.ModEntityType;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.registry.FuelRegistryEvents;
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.item.*;
+import net.minecraft.item.equipment.EquipmentType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -37,6 +39,9 @@ public class ModItems {
                 entries.add(ModItems.COCONUT);
                 //ENTITY
                 entries.add(ModItems.PALM_BOAT);
+                //armor
+                entries.add(ModItems.SEAWEED_HEADBAND);
+                entries.add(ModItems.SEAWEED_SKIRT);
             }).build();
 
 
@@ -71,4 +76,10 @@ public class ModItems {
     );
 
     public static final Item PALM_BOAT = register("palm_boat", settings -> new BoatItem(ModEntityType.PALM_BOAT, settings), new Item.Settings().maxCount(1));
+
+    public static final Item SEAWEED_HEADBAND = register("seaweed_headband",
+            Item::new, new Item.Settings().armor(ModArmorMaterials.SEAWEED, EquipmentType.HELMET));
+
+    public static final Item SEAWEED_SKIRT = register("seaweed_skirt",
+            Item::new, new Item.Settings().armor(ModArmorMaterials.SEAWEED, EquipmentType.LEGGINGS));
 }

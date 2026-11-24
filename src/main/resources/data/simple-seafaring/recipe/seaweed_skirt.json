@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "K K",
+    "KFK",
+    "K K"
+  ],
+  "key": {
+    "K": "minecraft:kelp",
+    "F": "#minecraft:small_flowers"
+  },
+  "result": {"id": "simple-seafaring:seaweed_skirt"}
+}

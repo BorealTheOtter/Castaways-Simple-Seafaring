@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "KSK"
+  ],
+  "key": {
+    "K": "minecraft:kelp",
+    "S": "minecraft:string"
+  },
+  "result": {"id":"simple-seafaring:seaweed_headband"}
+}
