@@ -1,13 +1,11 @@
 package com.castaways.blocks;
 
 
-import com.castaways.item.PalmLeavesBlock;
-import net.fabricmc.fabric.api.registry.FuelRegistryEvents;
+import com.castaways.world.tree.ModSaplingGenerators;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.item.BlockItem;
-import net.minecraft.item.FuelRegistry;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -18,8 +16,6 @@ import net.minecraft.util.Identifier;
 import java.util.function.Function;
 import com.castaways.SimpleSeafaring;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
-
-import static net.minecraft.block.Blocks.createLeavesSettings;
 
 public class ModBlocks {
 
@@ -59,7 +55,10 @@ public class ModBlocks {
             .burnable());
 
     //TEMP BLOCK TO SATISFY DROP TABLE
-    public static final Block PALM_SAPLING = register("palm_sapling", Block::new, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING).strength(2f));
+    public static final Block PALM_SAPLING = register("palm_sapling",
+            settings -> new PalmSaplingBlock(ModSaplingGenerators.PALM, settings),
+            AbstractBlock.Settings.copy(Blocks.OAK_SAPLING));
+
 
     private static Block register(String name, Function<AbstractBlock.Settings, Block> factory,
                                   AbstractBlock.Settings settings) {
