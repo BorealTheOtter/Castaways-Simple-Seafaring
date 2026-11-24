@@ -22,7 +22,7 @@
 			"com.castaways.client.SimpleSeafaringClient"
 		],
         "fabric-datagen": [
-         "com.castaways.client.datagen.SimpleSeafaringDataGenerator"
+          "com.castaways.world.SimpleSeafaringDataGenerator"
         ]
     },
 	"mixins": [

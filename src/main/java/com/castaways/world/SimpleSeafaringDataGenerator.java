@@ -1,8 +1,8 @@
-package com.castaways.client.datagen;
+package com.castaways.world;
 
-import com.castaways.client.datagen.Worldgen.SimpleSeafaringWorldgenProvider;
-import com.castaways.features.ModConfiguredFeatures;
-import com.castaways.features.ModPlacedFeatures;
+import com.castaways.datagen.ModRegistryDataGenerator;
+import com.castaways.world.ModConfiguredFeatures;
+import com.castaways.world.ModPlacedFeatures;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.registry.RegistryBuilder;
@@ -13,12 +13,12 @@ public class SimpleSeafaringDataGenerator implements DataGeneratorEntrypoint {
     public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
         FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 
-        pack.addProvider(SimpleSeafaringWorldgenProvider::new);
+        pack.addProvider(ModRegistryDataGenerator::new);
     }
 
     @Override
     public void buildRegistry(RegistryBuilder registryBuilder) {
-        registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, ModConfiguredFeatures::configure);
-        registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModPlacedFeatures::configure);
+        registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap);
+        registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModPlacedFeatures::bootstrap);
     }
 }
