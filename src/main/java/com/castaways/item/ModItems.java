@@ -37,6 +37,7 @@ public class ModItems {
                 entries.add(ModItems.COCONUT);
                 //ENTITY
                 entries.add(ModItems.PALM_BOAT);
+                entries.add(ModItems.PALM_CHEST_BOAT);
             }).build();
 
 
@@ -71,4 +72,5 @@ public class ModItems {
     );
 
     public static final Item PALM_BOAT = register("palm_boat", settings -> new BoatItem(ModEntityType.PALM_BOAT, settings), new Item.Settings().maxCount(1));
+    public static final Item PALM_CHEST_BOAT = register("palm_chest_boat", settings -> new BoatItem(ModEntityType.PALM_CHEST_BOAT, settings), new Item.Settings().maxCount(1));
 }

@@ -2,6 +2,7 @@ package com.castaways.entity;
 
 import com.castaways.SimpleSeafaring;
 import com.castaways.entity.vehicle.ModBoatEntity;
+import com.castaways.entity.vehicle.ModChestBoatEntity;
 import com.castaways.item.ModItems;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -17,6 +18,7 @@ public class ModEntityType{
     public static void initialize(){}
 
     public static final EntityType<ModBoatEntity> PALM_BOAT;
+    public static final EntityType<ModChestBoatEntity> PALM_CHEST_BOAT;
 
     private static <T extends Entity> EntityType<T> register(String id, EntityType.Builder<T> builder) {
         RegistryKey<EntityType<?>> key = RegistryKey.of(
@@ -32,6 +34,13 @@ public class ModEntityType{
                         .dimensions(1.375F, 0.5625F)
                         .eyeHeight(0.5625F)
                         .maxTrackingRange(10)
+        );
+
+        PALM_CHEST_BOAT = register("palm_chest_boat", EntityType.Builder.<ModChestBoatEntity>create((type, world) -> new ModChestBoatEntity(type, world, () -> ModItems.PALM_CHEST_BOAT), SpawnGroup.MISC)
+                .dropsNothing()
+                .dimensions(1.375F, 0.5625F)
+                .eyeHeight(0.5625F)
+                .maxTrackingRange(10)
         );
     }
 }
