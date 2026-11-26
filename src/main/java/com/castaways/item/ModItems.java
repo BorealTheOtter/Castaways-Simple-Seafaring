@@ -35,6 +35,7 @@ public class ModItems {
                 entries.add(ModBlocks.PALM_PLANKS);
                 //ITEMS
                 entries.add(ModItems.COCONUT);
+                entries.add(ModItems.SEAL_SPAWN_EGG);
                 //ENTITY
                 entries.add(ModItems.PALM_BOAT);
                 entries.add(ModItems.PALM_CHEST_BOAT);
@@ -70,6 +71,12 @@ public class ModItems {
                     .saturationModifier(2.5f)
                     .build()
             ));
+
+    public static final Item SEAL_SPAWN_EGG = register(
+            "seal_spawn_egg",
+            SpawnEggItem::new,
+            new Item.Settings().spawnEgg(ModEntityType.SEAL)
+    );
 
     public static final Item PALM_BOAT = register("palm_boat", settings -> new BoatItem(ModEntityType.PALM_BOAT, settings), new Item.Settings().maxCount(1));
     public static final Item PALM_CHEST_BOAT = register("palm_chest_boat", settings -> new BoatItem(ModEntityType.PALM_CHEST_BOAT, settings), new Item.Settings().maxCount(1));
