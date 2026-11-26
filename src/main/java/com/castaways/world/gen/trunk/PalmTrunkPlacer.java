@@ -1,6 +1,7 @@
 package com.castaways.world.gen.trunk;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.TestableWorld;
@@ -8,12 +9,18 @@ import net.minecraft.world.gen.feature.TreeFeatureConfig;
 import net.minecraft.world.gen.foliage.FoliagePlacer;
 import net.minecraft.world.gen.trunk.TrunkPlacer;
 import net.minecraft.world.gen.trunk.TrunkPlacerType;
+import com.mojang.serialization.MapCodec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import java.util.List;
 import java.util.function.BiConsumer;
 
-public class PalmTurnkPlacer extends TrunkPlacer {
-    public PalmTurnkPlacer(int baseHeight, int firstRandomHeight, int secondRandomHeight) {
+public class PalmTrunkPlacer extends TrunkPlacer {
+    public static final MapCodec<PalmTrunkPlacer> CODEC = RecordCodecBuilder.mapCodec(instance ->
+            fillTrunkPlacerFields(instance).apply(instance, PalmTrunkPlacer::new)
+    );
+
+    public PalmTrunkPlacer(int baseHeight, int firstRandomHeight, int secondRandomHeight) {
         super(baseHeight, firstRandomHeight, secondRandomHeight);
     }
 
@@ -24,6 +31,11 @@ public class PalmTurnkPlacer extends TrunkPlacer {
 
     @Override
     public List<FoliagePlacer.TreeNode> generate(TestableWorld world, BiConsumer<BlockPos, BlockState> replacer, Random random, int height, BlockPos startPos, TreeFeatureConfig config) {
+        if(world.testBlockState(startPos.down(), state -> state.isOf(Blocks.GRASS_BLOCK))) {
+            setToDirt(world, replacer, random, startPos.down(), config);
+        }
+
+
         return List.of();
     }
 }

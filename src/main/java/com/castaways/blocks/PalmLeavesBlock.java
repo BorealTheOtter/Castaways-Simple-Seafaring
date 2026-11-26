@@ -1,4 +1,4 @@
-package com.castaways.item;
+package com.castaways.blocks;
 
 import com.mojang.serialization.MapCodec;
 import net.minecraft.block.AbstractBlock;

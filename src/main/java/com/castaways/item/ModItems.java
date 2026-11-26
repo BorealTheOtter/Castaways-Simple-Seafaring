@@ -38,6 +38,7 @@ public class ModItems {
                 entries.add(ModItems.SEAL_SPAWN_EGG);
                 //ENTITY
                 entries.add(ModItems.PALM_BOAT);
+                entries.add(ModItems.PALM_CHEST_BOAT);
             }).build();
 
 
@@ -63,13 +64,13 @@ public class ModItems {
 
     //ITEMS
 
-    public static final Item COCONUT = register("coconut", Item::new, new Item.Settings().food(new FoodComponent.Builder()
-            .nutrition(4)
-            .saturationModifier(2.5f)
-            .alwaysEdible()
-            .build()
-            )
-    );
+    public static final Item COCONUT = register("coconut",
+            settings -> new BlockItem(ModBlocks.COCONUT, settings),
+            new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(4)
+                    .saturationModifier(2.5f)
+                    .build()
+            ));
 
     public static final Item SEAL_SPAWN_EGG = register(
             "seal_spawn_egg",
@@ -78,4 +79,5 @@ public class ModItems {
     );
 
     public static final Item PALM_BOAT = register("palm_boat", settings -> new BoatItem(ModEntityType.PALM_BOAT, settings), new Item.Settings().maxCount(1));
+    public static final Item PALM_CHEST_BOAT = register("palm_chest_boat", settings -> new BoatItem(ModEntityType.PALM_CHEST_BOAT, settings), new Item.Settings().maxCount(1));
 }
