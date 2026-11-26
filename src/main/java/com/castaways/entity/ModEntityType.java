@@ -31,16 +31,8 @@ public class ModEntityType{
 
     static {
 
-        PALM_BOAT = register("palm_boat", EntityType.Builder.<ModBoatEntity>create((type, world) -> new ModBoatEntity(type, world, () -> ModItems.PALM_BOAT), SpawnGroup.MISC)
-                        .dropsNothing()
-                        .dimensions(1.375F, 0.5625F)
-                        .eyeHeight(0.5625F)
-                        .maxTrackingRange(10)
-        );
+        PALM_BOAT = register("palm_boat", EntityType.Builder.<ModBoatEntity>create((type, world) -> new ModBoatEntity(type, world, () -> ModItems.PALM_BOAT), SpawnGroup.MISC).dropsNothing().dimensions(1.375F, 0.5625F).eyeHeight(0.5625F).maxTrackingRange(10));
 
-        SEAL = register("seal", EntityType.Builder.create(SealEntity::new, SpawnGroup.WATER_CREATURE)
-                        .dimensions(1.0F, 0.8F)
-                        .maxTrackingRange(10)
-        );
+        SEAL = register("seal", EntityType.Builder.create(SealEntity::new, SpawnGroup.WATER_CREATURE).dimensions(1.0F, 0.8F).maxTrackingRange(10));
     }
 }
