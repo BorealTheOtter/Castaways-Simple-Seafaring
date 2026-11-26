@@ -9,7 +9,7 @@
     "if_true": {
       "type": "minecraft:biome",
       "biome_is": [
-        "simple-seafaring:sample_biome"
+        "simple-seafaring:archipelago"
       ]
     },
     "then_run": {

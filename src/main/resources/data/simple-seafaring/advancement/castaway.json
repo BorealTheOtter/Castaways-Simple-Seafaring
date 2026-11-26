@@ -1,0 +1,27 @@
+{
+  "parent": "minecraft:adventure/root",
+  "display": {
+    "icon": { "id": "minecraft:jungle_sapling" },
+    "title": { "translate": "advancements.simple-seafaring.castaway.title" },
+    "description": { "translate": "advancements.simple-seafaring.castaway.description" },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "entered_archipelago": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": { "biomes": "simple-seafaring:archipelago" }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
