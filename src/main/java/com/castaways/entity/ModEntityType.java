@@ -1,5 +1,5 @@
 package com.castaways.entity;
-
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import com.castaways.SimpleSeafaring;
 import com.castaways.entity.vehicle.ModBoatEntity;
 import com.castaways.item.ModItems;
@@ -14,9 +14,12 @@ import net.minecraft.util.Identifier;
 
 public class ModEntityType{
 
-    public static void initialize(){}
+    public static void initialize() {
+        FabricDefaultAttributeRegistry.register(SEAL, SealEntity.createSealAttributes());
+    }
 
     public static final EntityType<ModBoatEntity> PALM_BOAT;
+    public static final EntityType<SealEntity> SEAL;
 
     private static <T extends Entity> EntityType<T> register(String id, EntityType.Builder<T> builder) {
         RegistryKey<EntityType<?>> key = RegistryKey.of(
@@ -27,10 +30,16 @@ public class ModEntityType{
     }
 
     static {
+
         PALM_BOAT = register("palm_boat", EntityType.Builder.<ModBoatEntity>create((type, world) -> new ModBoatEntity(type, world, () -> ModItems.PALM_BOAT), SpawnGroup.MISC)
                         .dropsNothing()
                         .dimensions(1.375F, 0.5625F)
                         .eyeHeight(0.5625F)
+                        .maxTrackingRange(10)
+        );
+
+        SEAL = register("seal", EntityType.Builder.create(SealEntity::new, SpawnGroup.WATER_CREATURE)
+                        .dimensions(1.0F, 0.8F)
                         .maxTrackingRange(10)
         );
     }
